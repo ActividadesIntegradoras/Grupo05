@@ -214,6 +214,14 @@
         .description-container:hover {
             box-shadow: 0 0 20px rgba(0, 255, 0, 1);
         }
+        .image-container {
+            margin-top: 20px;
+        }
+        .image-container img {
+            max-width: 80%; /* Ajusta el tamaño de la imagen */
+            height: auto; /* Mantiene la proporción */
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -232,7 +240,7 @@
         <nav class="menu">
             <ul>
                 <li class="menu-item" onclick="showSection('presentacion')">Presentación</li>
-                <li class="menu-item" onclick="showSection('diagnostico')">Mapa De Contexto</li>
+                <li class="menu-item" onclick="showSection('diagnostico')">Diagnóstico del Problema</li>
                 <li class="menu-item" onclick="showSection('narracion')">Narración Colectiva del Problema</li>
                 <li class="menu-item" onclick="showSection('causas')">Causas y Consecuencias</li>
                 <li class="menu-item" onclick="showSection('fundamentacion')">Fundamentación del Problema</li>
@@ -243,13 +251,13 @@
                         <li onclick="showSection('alternativa')">Alternativa de Solución Creativa</li>
                         <li onclick="showSection('estrategias')">Estrategias del Proyecto</li>
                         <li onclick="showSection('recursos')">Recursos del Proyecto</li>
-                        <li onclick="showSection('monitoreo')">Ficha de Monitoreo</li>
-                        <li onclick="showSection('ejecucion')">Ejecución del Proyecto</li>
+                        <li onclick="showSection('cronograma')">Cronograma del Proyecto</li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div class="content-section" id="presentacion">
+
+        <div class="content-section active-section" id="presentacion">
             <h2>Presentación del Grupo</h2>
             <div class="horizontal-container">
                 <div class="person-card" id="fabricio">
@@ -290,7 +298,64 @@
                 <button id="backButton" style="display: none;" onclick="backToSelection()">Regresar</button>
             </div>
         </div>
+
+        <div class="content-section" id="diagnostico">
+            <h2>Diagnóstico del Problema</h2>
+            <div class="image-container">
+                <img src="MapaDeContexto.jpg" alt="Mapa de Contexto" style="max-width: 70%; height: auto;">
+            </div>
+        </div>
+
+        <div class="content-section" id="narracion">
+            <h2>Narración Colectiva del Problema</h2>
+            <div class="image-container">
+                <img src="NarraciónColectiva.jpg" alt="Narración Colectiva" style="max-width: 70%; height: auto;">
+            </div>
+        </div>
+
+        <div class="content-section" id="causas">
+            <h2>Causas y Consecuencias</h2>
+            <div class="image-container">
+                <img src="CausasYConsecuencias.jpg" alt="Causas y Consecuencias" style="max-width: 70%; height: auto;">
+            </div>
+        </div>
+
+        <div class="content-section" id="fundamentacion">
+            <h2>Fundamentación del Problema</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="objetivos">
+            <h2>Objetivos del Proyecto</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="fundamentacionTecnica">
+            <h2>Fundamentación Técnica</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="alternativa">
+            <h2>Alternativa de Solución Creativa</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="estrategias">
+            <h2>Estrategias del Proyecto</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="recursos">
+            <h2>Recursos del Proyecto</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
+
+        <div class="content-section" id="cronograma">
+            <h2>Cronograma del Proyecto</h2>
+            <!-- Contenido adicional aquí -->
+        </div>
     </div>
+
     <script>
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.content-section');
